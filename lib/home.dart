@@ -1,3 +1,4 @@
+import 'package:coffee_card/coffee_prefs.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -6,14 +7,29 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'My Coffee Id Test',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.blue[700],
-          centerTitle: true,
+      appBar: AppBar(
+        title: const Text(
+          'My Coffee Id',
+          style: TextStyle(color: Colors.white),
         ),
-        body: const Text('hello'));
+        backgroundColor: Colors.brown[700],
+        centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            color: Colors.brown[200],
+            padding: const EdgeInsets.all(20),
+            child: const Text('How I like my coffee...'),
+          ),
+          Container(
+            color: Colors.brown[100],
+            padding: const EdgeInsets.all(20),
+            child: const CoffeePrefs(),
+          ),
+        ],
+      ),
+    );
   }
 }
